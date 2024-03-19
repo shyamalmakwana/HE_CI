@@ -29,7 +29,7 @@ jobs:
         shell: bash
         run: |
           cd hyp-autosplit-2-report-artifact-email
-          curl https://downloads.lambdatest.com/hyperexecute/windows/hyperexecute.exe -o hyperexecute.exe
+          curl https://downloads.lambdatest.com/hyperexecute/linux/hyperexecute -o hyperexecute
   
       - name: Setting Environment Variables
         shell: bash
