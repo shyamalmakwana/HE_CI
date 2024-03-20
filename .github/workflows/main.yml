@@ -8,38 +8,25 @@ on:
       accessKey:
         description: LT Access Key
         required: true
-      sampleRepoLink:
-        description: Link to the HyperExecute sample repo
-        default: https://github.com/john190501/hyp-autosplit-2-report-artifact-email
-        required: true
-
+        
 jobs:
   HyperExecute-Autosplit-2-Concurrency:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
     steps:
       - name: Checkout sources
         uses: actions/checkout@v2
-  
-      - name: Download the sample suite
+
+      - name: Download CLI and Setting Environment Variables
         shell: bash
         run: |
-          git clone ${{ github.event.inputs.sampleRepoLink }}
-  
-      - name: Download CLI and setting environment variables
-        shell: bash
-        run: |
-          cd hyp-autosplit-2-report-artifact-email
           curl https://downloads.lambdatest.com/hyperexecute/linux/hyperexecute -o hyperexecute
-  
-      - name: Setting Environment Variables
-        shell: bash
-        run: |
-          export LT_USERNAME=${{ github.event.inputs.username }}
-          export LT_ACCESS_KEY=${{ github.event.inputs.accessKey }}
-          echo $LT_USERNAME
-          echo $LT_ACCESS_KEY
-  
+          chmod +x hyperexecute
+      
       - name: Executing the Job
         shell: bash
         run: |
-          ./hyperexecute --user $LT_USERNAME --key $LT_ACCESS_KEY --config yaml/autosplit_linux.yaml --download-artifacts --download-report
+          ./hyperexecute --user ${{ github.event.inputs.username }} --key ${{ github.event.inputs.accessKey }} --download-artifacts --config yaml/autosplit_linux.yaml
+          echo "Test completion"
