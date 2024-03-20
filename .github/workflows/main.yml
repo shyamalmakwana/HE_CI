@@ -15,7 +15,7 @@ on:
 
 jobs:
   HyperExecute-Autosplit-2-Concurrency:
-    runs-on: linux
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout sources
         uses: actions/checkout@v2
