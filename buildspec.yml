@@ -1,7 +1,0 @@
-version: 0.2
-phases:
-  build:
-    commands:
-      - curl -O http://downloads.lambdatest.com/hyperexecute/linux/hyperexecute
-      - chmod +x hyperexecute
-      - ./hyperexecute --user <your_user_name> --key <your_access_key> --config <your_yaml_file>
