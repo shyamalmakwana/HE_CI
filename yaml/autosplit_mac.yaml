@@ -51,4 +51,4 @@ framework:
     - "-Dplatname=mac"
     - "--file=pom02.xml"
 
-jobLabel: [Autosplit 2, Report, Artifacts, Email]
+jobLabel: [HYP, CI-CD, GitHub Actions]
