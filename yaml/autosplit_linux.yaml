@@ -25,13 +25,12 @@ cacheDirectories:
 
 pre:
   # Skip execution of the tests in the pre step
-  - mvn -Dmaven.repo.local=./.m2 dependency:resolve
+  - mvn dependency:resolve
 
 post:
   - ls target/surefire-reports/
 
 mergeArtifacts: true
-
 
 uploadArtefacts:
  - name: ExecutionSnapshots
@@ -53,4 +52,4 @@ framework:
     - "-Dplatname=linux"
     - "--file=pom02.xml"
 
-jobLabel: [Autosplit 2, Report, Artifacts, Email]
+jobLabel: [HYP, CI-CD, GitHub Actions]
