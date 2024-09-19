@@ -1,5 +1,5 @@
 ---
-version: 0.2
+version: 0.1
 globalTimeout: 150
 testSuiteTimeout: 150
 testSuiteStep: 150
