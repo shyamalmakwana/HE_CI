@@ -1,5 +1,5 @@
 ---
-version: 0.1
+version: 0.2
 globalTimeout: 150
 testSuiteTimeout: 150
 testSuiteStep: 150
@@ -49,18 +49,18 @@ partialReports:
     to:
       - johnwick190501@gmail.com
 
-#framework:
-#  name: maven/testng
-#  defaultReports: false
-#  flags:
-#    - "-Dplatname=linux"
-#    - "--file=pom02.xml"
+framework:
+ name: maven/testng
+ defaultReports: false
+ flags:
+   - "-Dplatname=linux"
+   - "--file=pom02.xml"
 
-testDiscovery:
-  type: raw
-  mode: static
-  command: grep -r -l --include="pom02.xml" ".*" src/test/java/ | sed 's#.*/##' | sed 's/\.xml$//'
-testRunnerCommand: mvn test -P $test
+# testDiscovery:
+#   type: raw
+#   mode: static
+#   command: grep -r -l --include="pom02.xml" ".*" src/test/java/ | sed 's#.*/##' | sed 's/\.xml$//'
+# testRunnerCommand: mvn test -P $test
 
 
 jobLabel: [HYP, CI-CD, GitHub Actions]
