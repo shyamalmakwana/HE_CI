@@ -39,6 +39,7 @@ public class Test4
         capabilities.setCapability("network",true);
         capabilities.setCapability("console",true);
         capabilities.setCapability("visual",true);
+        capabilities.setCapability("accessibility",true);
 
         try
         {

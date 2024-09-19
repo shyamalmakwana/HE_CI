@@ -40,6 +40,7 @@ public class Test1
         capabilities.setCapability("network",true);
         capabilities.setCapability("console",true);
         capabilities.setCapability("visual",true);
+        capabilities.setCapability("accessibility",true);
 
         try
         {
@@ -60,6 +61,7 @@ public class Test1
 
         driver.get(testURL);
         Thread.sleep(5000);
+        SmartUISnapshot.smartuiSnapshot(driver, "ss1");
 
         test1.log(LogStatus.PASS, "URL is opened");
         WebDriverWait wait = new WebDriverWait(driver, 5);

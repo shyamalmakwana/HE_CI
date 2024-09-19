@@ -18,6 +18,7 @@ shell: bash
 env:
   # PAT: ${{ .secrets.testKey }}
   CACHE_DIR: m2_cache_dir
+  PROJECT_TOKEN: "550422#e08b0b5c-f1b9-4a96-969d-25418bb47c15#HE_smartUI" #Enter your project token here
 
 cacheKey: '{{ checksum "pom.xml" }}'
 cacheDirectories:
@@ -25,7 +26,10 @@ cacheDirectories:
 
 pre:
   # Skip execution of the tests in the pre step
+  - npm i @lambdatest/smartui-cli
+  - npx smartui config:create smartui-web.json
   - mvn dependency:resolve
+
 
 post:
   - ls target/surefire-reports/

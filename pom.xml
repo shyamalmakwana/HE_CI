@@ -73,6 +73,12 @@
         <version>3.0.0-M5</version>
         <type>maven-plugin</type>
     </dependency>
+    <dependency>
+        <groupId>io.github.lambdatest</groupId>
+        <artifactId>lambdatest-java-sdk</artifactId>
+        <version>1.0.0</version>
+    </dependency>
+
 
 </dependencies>
 
